@@ -1,3 +1,6 @@
 /venv
 /.idea
 /.git
+/output_file/flat_rotate_photo/*
+/output_file/get_image_from_pdf/*
+/output_file/serh_box_text/*

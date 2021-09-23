@@ -12,6 +12,11 @@ TEST_PATH_FROM_ROTATE = "/home/denis/PycharmProjects/orc_pdf/output_file/get_ima
 TEST_PATH_OUTPUT = "output_file/flat_rotate_photo/"
 
 
+def cvShow(img: np.ndarray, title: str = "No Name") -> None:
+	cv2.imshow(title, img)
+	cv2.waitKey(0)
+
+
 def ShowImagePlt(img: np.ndarray, title: str = "No Name") -> None:
 	"""
 	Показать изображение в matplotlib.pyplot
@@ -22,7 +27,7 @@ def ShowImagePlt(img: np.ndarray, title: str = "No Name") -> None:
 	plt.xlabel('X')  # Название X
 	plt.ylabel('Y')  # Название Y
 	plt.grid(True)  # Установить сетку
-	plt.imshow(img, cmap='gray',extent=[0,1500,0,2000])  # Загрузить в черно-белом режиме
+	plt.imshow(img, cmap="gray")  # Загрузить в черно-белом режиме
 	plt.show()  # Отобразить
 
 
@@ -145,6 +150,16 @@ def draw_rectangle_in_image_and_get_angel(img: np.ndarray, nonZeroCoordinates: n
 		cv2.line(img, (int(pt1[0]), int(pt1[1])), (int(pt2[0]), int(pt2[1])), (0, 255, 0), 2, cv2.LINE_AA)
 
 	return box[2]
+
+
+def write_image(path, img):
+	"""
+	Сохранить фото
+	:param path:
+	:param img:
+	:return:
+	"""
+	cv2.imwrite(path, img)
 
 
 ###
